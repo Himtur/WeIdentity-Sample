@@ -35,6 +35,8 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
+    mavenLocal()
+    maven { url 'dependencies' }
 	if (!gradle.startParameter.isOffline()) {
          mavenLocal()
         if ("cn" == repo) {
@@ -111,6 +113,8 @@ configurations {
 
 //添加编译时的依赖
 dependencies {
+    compile group: 'sg.edu.ntu.sce.sands.crypto', name: 'dcpabe', version: '1.1-SNAPSHOT'
+
     localDeps 'org.projectlombok:lombok:1.18.12'
     // Check SDK pipeline dependency
     if (file("./dependencies/weid-java-sdk-pipeline.jar").exists()) {

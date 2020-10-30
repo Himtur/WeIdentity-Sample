@@ -56,7 +56,7 @@ public class DemoOtherWeIdController {
     public ResponseData<String> createWeId(
         @ApiParam(name = "credentialModel", value = "公私钥对模板")
         @RequestBody CreateWeIdModel createWeIdModel) {
-
+        System.out.println(createWeIdModel.getPublicKey()+"\n"+createWeIdModel.getPrivateKey());
         if (null == createWeIdModel
             || StringUtils.isBlank(createWeIdModel.getPublicKey())
             || StringUtils.isBlank(createWeIdModel.getPrivateKey())) {
